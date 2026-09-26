@@ -150,3 +150,20 @@ document.getElementById('closeModalBtn').addEventListener('click', () => {
   modal.classList.add('hidden');
 });
 
+// ---------- Tab Click (Filter) ----------
+tabButton.forEach((button) => {
+  button.addEventListener('click', () => {
+    tabButton.forEach((btn) => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const tabName = button.textContent.trim().toLowerCase();
+
+    if (tabName === "all") {
+      renderCards(allIssuesData);
+    } else {
+      const filteredData = allIssuesData.filter((issue) => issue.status === tabName);
+      renderCards(filteredData);
+    }
+  });
+});
+
