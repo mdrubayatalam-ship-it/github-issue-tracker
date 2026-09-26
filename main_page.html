@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | Github Issue Tracker</title>
-     
+
     <link
       rel="shortcut icon"
       href="assets/github-logo.png"
@@ -34,49 +34,105 @@
     />
 
     <style>
-  .tab-btn.active {
-    background-color: #4A00FF;
-    color: white;
-  }
-</style>
+      .tab-btn.active {
+        background-color: #4a00ff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar bg-base-100 shadow-sm">
+          <div class="flex-1 flex mx-auto px-[80px]">
+            <div class="flex-1 flex items-center gap-2">
+              <img
+                class="w-10 max-h-screen"
+                src="assets/github-logo.png"
+                alt=""
+              />
+              <a class="text-xl font-semibold">Github Issues Tracker</a>
+            </div>
+            <div class="flex gap-4">
+              <input
+                type="text"
+                placeholder="Search"
+                class="input w-24 md:w-auto"
+              />
+              <button class="btn btn-primary">+ New Issue</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-</head>
-<body>
-    
-<header>
-     <nav>
-<div class="navbar bg-base-100 shadow-sm">
- <div class="flex-1 flex mx-auto px-[80px]">
-    <div class="flex-1 flex items-center gap-2">
-     <img class="w-10 max-h-screen" src="assets/github-logo.png" alt="">
-     <a class="text-xl font-semibold">Github Issues Tracker</a>
-   </div>
-   <div class="flex gap-4">
-     <input type="text" placeholder="Search" class="input w-24 md:w-auto" />
-     <button class="btn btn-primary ">+ New Issue</button>    
-  </div>
- </div>
-</div>
-     </nav>
-</header>
+    <section>
+      <div class="container rounded-sm bg-base-500 w-[1110px] mx-auto mt-14 shadow-sm">
+        <div class="flex p-4 gap-2">
+          <button class="btn tab-btn active w-24">All</button>
+          <button class="btn tab-btn w-24">Open</button>
+          <button class="btn tab-btn w-24">Closed</button>
+        </div>
+      </div>
+    </section>
 
-<section>
-    <div class="card bg-base-500 w-[1110px] mx-auto mt-14 shadow-sm">
-<div class="flex p-4 gap-2">
-    <button class="btn tab-btn active w-24">All</button>
-    <button class="btn tab-btn w-24">Open</button>
-    <button class="btn tab-btn w-24">Closed</button>
-</div>
-         
-    </div>
-</section>
+    <section>
+      <div class="container bg-base-100 w-[1110px] mx-auto mt-4 rounded-t-sm shadow-sm">
+        <div class="flex justify-between items-center p-4">
+          <div class="flex gap-2">
+            <div class="bg-[#ECE4FF] rounded-full p-3">
+              <img src="assets/Aperture.png" alt="" class="w-6 h-6" />
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold">50 Issues</h2>
+              <p class="text-sm opacity-50">
+                Track and manage your project issues
+              </p>
+            </div>
+           </div> 
+
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                <span class="text-sm text-gray-600 font-semibold">Open</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                <span class="text-sm text-gray-600 font-semibold">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
+      <div class="container grid grid-cols-4 bg-[#FEECEC] w-[1110px] mx-auto gap-4 p-4 shadow-sm">
+          
+           <div class="card bg-white shadow-sm p-4">
+                     <div class="flex justify-between items-center">
+                         <img class="w-3 h-3" src="assets/Open-Status.png" alt="">
+                         <span class=" bg-[#FEECEC] rounded-full p-2"><p class="text-[10px] text-[#EF4444]">Priority</p></span>
+                     </div>
+                     <div class="mt-3">
+                              <h2 class="text-sm font-semibold">Fix navigation menu on mobile devices</h2>
+                              <p class="text-[12px] text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
+                     </div>
+                    <div class="flex gap-2 mt-3">
+                           <div>
+                                    <span class="bg-[#FECACA] text-[10px] text-[#EF4444] p-1 rounded-full"><i class="fa-solid fa-bug"></i>  BUG</span>
+                           </div>
+                           <div>
+                                    <span class="bg-[#FFF8DB] text-[10px] text-[#D97706] p-1 rounded-full"><i class="fa-regular fa-life-ring"></i>  HELP WANTED</span>
+                           </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-200 -mx-4 mt-4"></div>
+                    <p class="text-[12px] text-[#64748B]">#1 by john_doe</p>
+                    <p class="mt-2 text-[12px] text-[#64748B]">1/15/2024</p>         
+           </div>          
+      </div>
+    </section>
 
-
-
-<script src="logic.js"></script>
-
-</body>
+    <script src="logic.js"></script>
+  </body>
 </html>
