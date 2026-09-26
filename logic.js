@@ -167,3 +167,17 @@ tabButton.forEach((button) => {
   });
 });
 
+// ---------- Search ----------
+const searchInput = document.getElementById('searchBox');
+searchInput.addEventListener('keyup', () => {
+  const query = searchInput.value;
+  if (query.length > 0) {
+    const searchUrl = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${query}`;
+    loadIssues(searchUrl);
+  } else {
+    loadIssues(allUrl);
+  }
+});
+
+// ---------- Initial Load ----------
+loadIssues(allUrl);
