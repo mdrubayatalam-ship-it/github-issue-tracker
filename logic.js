@@ -113,3 +113,40 @@ const renderCards = (issues) => {
   });
 };
 
+// ---------- Modal ----------
+const getStatusStyle = (status) => {
+  return status === "open"
+    ? { label: "Opened", bg: "bg-green-500" }
+    : { label: "Closed", bg: "bg-purple-500" };
+};
+
+const openModal = (issue) => {
+  document.getElementById('modalTitle').textContent = issue.title;
+  document.getElementById('modalAuthor').textContent = issue.author;
+  document.getElementById('modalDate').textContent = issue.createdAt;
+  document.getElementById('modalDescription').textContent = issue.description;
+  document.getElementById('modalAssignee').textContent = issue.author;
+
+  const statusStyle = getStatusStyle(issue.status);
+  const statusEl = document.getElementById('modalStatus');
+  statusEl.textContent = statusStyle.label;
+  statusEl.className = `${statusStyle.bg} text-white text-xs font-semibold px-3 py-1 rounded-full`;
+
+  const priorityStyle = getPriorityStyle(issue.priority);
+  const priorityEl = document.getElementById('modalPriority');
+  priorityEl.textContent = issue.priority;
+  priorityEl.className = `inline-block text-xs font-semibold px-3 py-1 rounded-full ${priorityStyle.bg} ${priorityStyle.text}`;
+
+  const labelsContainer = document.getElementById('modalLabels');
+  labelsContainer.innerHTML = issue.labels.map((label) => {
+    const style = getLabelStyle(label);
+    return `<span class="${style.class}">${style.icon} ${label}</span>`;
+  }).join("");
+
+  modal.classList.remove('hidden');
+};
+
+document.getElementById('closeModalBtn').addEventListener('click', () => {
+  modal.classList.add('hidden');
+});
+
